@@ -1133,6 +1133,29 @@
 
     <script>
       /* -pmr  add javacript functions to handle button clicks */
+      function handleBookmark() { console.log('handleBookmark'); }
+
+      function handlePrint() {
+        console.log('handlePrint');
+        window.print();
+      } 
+
+      function download(url, filename) {
+      fetch(url).then(function(t) {
+        return t.blob().then((b)=>{
+          var a = document.createElement("a");
+          a.href = URL.createObjectURL(b);
+          a.setAttribute("download", filename);
+          a.click();
+        }
+        );
+      });
+      }
+
+      function handleDownload() {
+        console.log('handleDownload');
+        download("http://192.168.12.200:8080/EMoHC Guidelines.pdf", "EMoHC Guidlines.pdf");
+      } 
     </script>
 
   </head>
@@ -1140,11 +1163,9 @@
 
     <!-- -pmr add buttons -->
     <div class="button-container no-print">
-      <button class="button" onclick="window.print()">Print</button>
-      <!-- <button class="button" onclick="handleDownload()">Download as PDF</button> -->
-      <a href="./EMoHC Guidelines.pdf" download>
-        <button class="button">Download as PDF</button>
-      </a>
+      <!-- <button class="button" onclick="handleBookmark()">Bookmark</button> -->
+      <button class="button" onclick="handlePrint()">Print</button>
+      <button class="button" onclick="handleDownload()">Download as PDF</button>
     </div>
 
     <p class="c24 hx">
@@ -1475,7 +1496,7 @@
     </p>
     <p class="c8 no-print">
       <span class="c4 c30">
-        <a class="c26" href="https://archsa.org/wp-content/uploads/06-16-2023_Guidelines-for-EMHC_EN.pdf" target="_blank">6-16-23 Guidelines for EMHC EN</a>
+        <a class="c26" href="https://www.google.com/url?q=https://archsa.org/wp-content/uploads/06-16-2023_Guidelines-for-EMHC_EN.pdf&amp;sa=D&amp;source=editors&amp;ust=1704767503544334&amp;usg=AOvVaw1B82ALlB4c6_GlgxyyDOAu" target="_blank">6-16-23 Guidelines for EMHC EN</a>
       </span>
     </p>
     <br><br><br>
@@ -1486,7 +1507,7 @@
     </p>
     <br><br><br>
     <p class="c8">
-      <span class="c6">Prince of Peace EMoHC Guidelines v1.0 / 2023-12-23</span>
+      <span class="c6">Prince of Peace EMoHC Procedures v1.0 / 2023-12-10</span>
     </p>
   </body>
 </html>
