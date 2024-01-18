@@ -1133,29 +1133,6 @@
 
     <script>
       /* -pmr  add javacript functions to handle button clicks */
-      function handleBookmark() { console.log('handleBookmark'); }
-
-      function handlePrint() {
-        console.log('handlePrint');
-        window.print();
-      } 
-
-      function download(url, filename) {
-      fetch(url).then(function(t) {
-        return t.blob().then((b)=>{
-          var a = document.createElement("a");
-          a.href = URL.createObjectURL(b);
-          a.setAttribute("download", filename);
-          a.click();
-        }
-        );
-      });
-      }
-
-      function handleDownload() {
-        console.log('handleDownload');
-        download("http://192.168.12.200:8080/EMoHC Guidelines.pdf", "EMoHC Guidlines.pdf");
-      } 
     </script>
 
   </head>
@@ -1163,9 +1140,11 @@
 
     <!-- -pmr add buttons -->
     <div class="button-container no-print">
-      <!-- <button class="button" onclick="handleBookmark()">Bookmark</button> -->
-      <button class="button" onclick="handlePrint()">Print</button>
-      <button class="button" onclick="handleDownload()">Download as PDF</button>
+      <button class="button" onclick="window.print()">Print</button>
+      <!-- <button class="button" onclick="handleDownload()">Download as PDF</button> -->
+      <a href="./EMoHC Guidelines.pdf" download>
+        <button class="button">Download as PDF</button>
+      </a>
     </div>
 
     <p class="c24 hx">
@@ -1270,8 +1249,7 @@
         <span class="c1">. &nbsp;Please clearly print your initials next to your name.</span>
       </li>
       <li class="c2 li-bullet-0">
-        <span class="c3">EM</span>
-        <span class="c23">oHC Lanyards:</span>
+        <span class="c3">EMoHC Lanyards:</span>
         <span class="c4">&nbsp; On the wall next to the clipboard, you will find lanyards. EMoHC Lanyards have a red and blue Cross with a red Chalice and a white Host. EMoHC distributing the Body of Christ should wear lanyards with a black rope. EMoHC distributing the Precious Blood of Christ should wear lanyards with a red rope. </span>
         <span class="c5">Please remember to return your Lanyard before leaving the Church. &nbsp;</span>
       </li>
@@ -1293,8 +1271,8 @@
     </p>
     <p class="c8">
       <span class="c1">During the Communion Rite, the </span>
-      <span class="c4">P</span>
-      <span class="c1">riest holds up the host and says &quot;Behold the Lamb of God, behold him who takes away the sins of the world. Blessed are those called to the supper of the Lamb.&quot;</span>
+      <!-- <span class="c4">P</span> -->
+      <span class="c1">Priest holds up the consecrated Host and says &quot;Behold the Lamb of God, behold him who takes away the sins of the world. Blessed are those called to the supper of the Lamb.&quot;</span>
     </p>
     <p class="c9">
       <span class="c1">The congregation responds with the prayer &quot;Lord, I am not worthy that you should enter under my roof, but only say the word and my soul shall be healed.&quot;</span>
@@ -1334,10 +1312,8 @@
     </p>
     <p class="c8">
       <span class="c4 c11">After Communion, each EMoHC will receive a Ciborium or a Chalice from the hands of a </span>
-      <span class="c4">P</span>
-      <span class="c4 c11">riest or </span>
-      <span class="c4">D</span>
-      <span class="c4 c11">eacon. You do not come up to the Altar and take the sacred vessels yourself.</span>
+      <span class="c4 c11">Priest or </span>
+      <span class="c4 c11">Deacon. You do not come up to the Altar and take the sacred vessels yourself.</span>
     </p>
     <p class="c8 c7">
       <span class="c1">The first person to receive the Body of Christ from the Priest is W1. The Priest will then continue down the rest of the line serving the Body of Christ, moving from right to left.</span>
@@ -1376,9 +1352,9 @@
       <span class="c4 c7">Eucharistic Minister </span>
       <span class="c4">places the Host on the communicant&rsquo;s tongue or in the communicant&rsquo;s hand. No other words should be added. The decision to receive the host on the tongue or in the hand is made by the communicant, not the </span>
       <span class="c4 c7">Eucharistic Minister</span>
-      <span class="c4">. Special care should be taken to ensure that the Host is consumed by the communicant in the presence of the </span>
+      <span class="c4">. Special care should be taken to ensure that the Body of Christ is consumed by the communicant in the presence of the </span>
       <span class="c4 c7">Eucharistic Minister</span>
-      <span class="c1">, so that no one walks away without consuming the Host.</span>
+      <span class="c1">, so that no one walks away without consuming the Body of Christ.</span>
     </p>
     <p class="c8 hx">
       <span class="c12 c21 c11">Giving the Precious Blood of Christ</span>
@@ -1496,7 +1472,7 @@
     </p>
     <p class="c8 no-print">
       <span class="c4 c30">
-        <a class="c26" href="https://www.google.com/url?q=https://archsa.org/wp-content/uploads/06-16-2023_Guidelines-for-EMHC_EN.pdf&amp;sa=D&amp;source=editors&amp;ust=1704767503544334&amp;usg=AOvVaw1B82ALlB4c6_GlgxyyDOAu" target="_blank">6-16-23 Guidelines for EMHC EN</a>
+        <a class="c26" href="https://archsa.org/wp-content/uploads/06-16-2023_Guidelines-for-EMHC_EN.pdf" target="_blank">6-16-23 Guidelines for EMHC EN</a>
       </span>
     </p>
     <br><br><br>
@@ -1507,7 +1483,7 @@
     </p>
     <br><br><br>
     <p class="c8">
-      <span class="c6">Prince of Peace EMoHC Procedures v1.0 / 2023-12-10</span>
+      <span class="c6">Prince of Peace EMoHC Guidelines v1.0 / 2023-12-23</span>
     </p>
   </body>
 </html>
